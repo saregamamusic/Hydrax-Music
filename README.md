@@ -3,7 +3,7 @@
 
 </h2>
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝗙𝗢𝗥𝗞+𝗧𝗛𝗜𝗦+𝗥𝗘𝗣𝗢+𝗕𝗘𝗙𝗢𝗥𝗘+𝗗𝗘𝗣𝗟𝗢𝗬)(https://github.com/saregamamusic/SaregamaMusic)
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝗪𝗘𝗟𝗖𝗢𝗠𝗘+𝗧𝗢+𝗦𝗔𝗥𝗘𝗚𝗔𝗠𝗔+𝗠𝗨𝗦𝗜𝗖+𝗥𝗘𝗣𝗢+𝙿𝙾𝚆𝙴𝚁𝙴𝙳+𝙱𝚈+☞+𝗧𝗘𝗔𝗠+𝗥𝗜𝗬𝗔) (https://github.com/saregamamusic/SaregamaMusic)
 
 
 
