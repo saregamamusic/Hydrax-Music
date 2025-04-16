@@ -17,7 +17,7 @@ from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import YOUTUBE_IMG_URL
-from SaregamaMusic import app
+from SaregamaMusic import app  # Updated
 
 logging.basicConfig(level=logging.INFO)
 
@@ -79,18 +79,18 @@ def crop_center_circle(img, output_size, border, border_color, crop_scale=1.5):
     )
     
     img = img.resize((output_size - 2*border, output_size - 2*border))
-    
-    
+
+  
     final_img = Image.new("RGBA", (output_size, output_size), border_color)
-    
-    
+
+  
     mask_main = Image.new("L", (output_size - 2*border, output_size - 2*border), 0)
     draw_main = ImageDraw.Draw(mask_main)
     draw_main.ellipse((0, 0, output_size - 2*border, output_size - 2*border), fill=255)
     
     final_img.paste(img, (border, border), mask_main)
-    
-    
+
+  
     mask_border = Image.new("L", (output_size, output_size), 0)
     draw_border = ImageDraw.Draw(mask_border)
     draw_border.ellipse((0, 0, output_size, output_size), fill=255)
@@ -100,23 +100,23 @@ def crop_center_circle(img, output_size, border, border_color, crop_scale=1.5):
     return result
 
 def draw_text_with_shadow(background, draw, position, text, font, fill, shadow_offset=(3, 3), shadow_blur=5):
-    
+  
     shadow = Image.new('RGBA', background.size, (0, 0, 0, 0))
     shadow_draw = ImageDraw.Draw(shadow)
-    
-    
+
+  
     shadow_draw.text(position, text, font=font, fill="black")
-    
-    
+
+  
     shadow = shadow.filter(ImageFilter.GaussianBlur(radius=shadow_blur))
-    
-    
+
+  
     background.paste(shadow, shadow_offset, shadow)
-    
-    
+
+  
     draw.text(position, text, font=font, fill=fill)
 
-
+                   
     
 async def gen_thumb(videoid: str):
     try:
@@ -157,7 +157,7 @@ async def gen_thumb(videoid: str):
         
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
-        
+               
                 content = await resp.read()
                 if resp.status == 200:
                     content_type = resp.headers.get('Content-Type')
@@ -174,8 +174,8 @@ async def gen_thumb(videoid: str):
                     await f.write(await resp.read())
                     await f.close()
                     # os.system(f"file {filepath}")
-                    
-        
+
+      
         image_path = f"cache/thumb{videoid}.png"
         youtube = Image.open(image_path)
         image1 = changeImageSize(1280, 720, youtube)
@@ -185,18 +185,18 @@ async def gen_thumb(videoid: str):
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
 
-        
+      
         start_gradient_color = random_color()
         end_gradient_color = random_color()
         gradient_image = generate_gradient(1280, 720, start_gradient_color, end_gradient_color)
         background = Image.blend(background, gradient_image, alpha=0.2)
         
         draw = ImageDraw.Draw(background)
-        arial = ImageFont.truetype("SaregamaMusic/assets/font2.ttf", 30)
-        font = ImageFont.truetype("SaregamaMusic/assets/font.ttf", 30)
-        title_font = ImageFont.truetype("SaregamaMusic/assets/font3.ttf", 45)
+        arial = ImageFont.truetype("SaregamaMusic/assets/font2.ttf", 30)  # Updated
+        font = ImageFont.truetype("SaregamaMusic/assets/font.ttf", 30)    # Updated
+        title_font = ImageFont.truetype("SaregamaMusic/assets/font3.ttf", 45)  # Updated
 
-
+      
         circle_thumbnail = crop_center_circle(youtube, 400, 20, start_gradient_color)
         circle_thumbnail = circle_thumbnail.resize((400, 400))
         circle_position = (120, 160)
@@ -208,7 +208,7 @@ async def gen_thumb(videoid: str):
         draw_text_with_shadow(background, draw, (text_x_position, 230), title1[1], title_font, (255, 255, 255))
         draw_text_with_shadow(background, draw, (text_x_position, 320), f"{channel}  |  {views[:23]}", arial, (255, 255, 255))
 
-
+      
         line_length = 580  
         line_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
