@@ -50,7 +50,7 @@ async def init():
         pass
     await AMBOTOP.decorators()
     LOGGER("SaregamaMusic").info(
-        "saregama music started"
+        "BsdK Saregama Music Start Hoga Be Ab"
     )
     await idle()
     await app.stop()
