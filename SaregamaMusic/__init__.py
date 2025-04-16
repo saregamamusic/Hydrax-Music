@@ -15,7 +15,7 @@ app = AMBOTOP()
 userbot = Userbot()
 
 
-from .platforms import *
+from .Youtube import YouTubeAPI *
 
 Apple = AppleAPI()
 Carbon = CarbonAPI()
