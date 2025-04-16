@@ -396,7 +396,7 @@ class YouTubeAPI:
                     stdout=asyncio.subprocess.PIPE,
                     stderr=asyncio.subprocess.PIPE,
                 )
-               stdout, stderr = await proc.communicate()
+                stdout, stderr = await proc.communicate()
                 if stdout:
                     downloaded_file = stdout.decode().split("\n")[0]
                     direct = False
