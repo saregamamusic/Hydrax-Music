@@ -43,4 +43,3 @@ async def speedtest_function(client, message: Message, _):
     )
     msg = await message.reply_photo(photo=result["share"], caption=output)
     await m.delete()
-
