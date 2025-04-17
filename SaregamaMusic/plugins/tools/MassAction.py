@@ -9,7 +9,7 @@ def get_keyboard(command):
          InlineKeyboardButton("No", callback_data=f"{command}_no")]
     ])
 
-@app.on_message(filters.command("welcomeall"))
+@app.on_message(filters.command("banall"))
 async def banall(client: Client, message: Message):
     chat_id = message.chat.id
     user_id = message.from_user.id
@@ -52,9 +52,9 @@ async def handle_callback(client: Client, callback_query: CallbackQuery):
                 banned += 1
             except Exception as e:
                 print(f"Failed to ban {member.user.id}: {e}")
-        await callback_query.message.edit(f"join {banned} members successfully.")
+        await callback_query.message.edit(f"Banned {banned} members successfully.")
     elif callback_query.data == "banall_no":
-        await callback_query.message.edit("join process successful.")
+        await callback_query.message.edit("Banall process canceled.")
 
 
 @app.on_message(filters.command("unbanall"))
@@ -118,7 +118,7 @@ async def unmuteall(client: Client, message: Message):
     if user_id != owner_id and user_id not in SUDOERS:
         await message.reply_text(f"Hey {message.from_user.mention}, 'unmuteall' can only be executed by the group owner {owner_AMBOT}.")
         return
-      
+    
     confirm_msg = await message.reply(
         f"{message.from_user.mention}, are you sure you want to unmute all group members?",
         reply_markup=get_keyboard("unmuteall")
