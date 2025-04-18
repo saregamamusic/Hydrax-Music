@@ -32,11 +32,11 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https: "",
+    "https: "https://github.com/saregamamusic/Hydrax-Music",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
-    "GIT_TOKEN", "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"
+    "GIT_TOKEN", ""
 )  # Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Music_World_Update")
