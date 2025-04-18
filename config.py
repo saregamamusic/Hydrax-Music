@@ -40,7 +40,7 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Hydrax_Music_Update")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/+gdo528FUAq84NTM1")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/Hydrax_Music_Update")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -87,7 +87,7 @@ PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://graph.org/file/4e4449251cf24214e3756-9ddd9b60fb0c9cafae.jpg"
 )
 PLAYLIST_IMG_URL = "https://graph.org//file/3dfcffd0c218ead96b102.png"
-STATS_IMG_URL = "https://envs.sh/WJ-.jpg"
+STATS_IMG_URL = "https://files.catbox.moe/rrehl3.jpg"
 TELEGRAM_AUDIO_URL = "https://graph.org//file/2f7debf856695e0ef0607.png"
 TELEGRAM_VIDEO_URL = "https://graph.org//file/2f7debf856695e0ef0607.png"
 STREAM_IMG_URL = "https://te.legra.ph/file/bd995b032b6bd263e2cc9.jpg"
