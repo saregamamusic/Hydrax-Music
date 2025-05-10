@@ -14,6 +14,9 @@ import os
 import glob
 import random
 import logging
+import aiohttp
+import config
+from config import API_URL, API_KEY
 
 import requests
 import glob
@@ -22,7 +25,7 @@ import random
 
 
 def cookie_txt_file():
-    cookie_dir = "SaregamaMusic/cookies"
+    cookie_dir = f"{os.getcwd()}/cookies"
     cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
 
     cookie_file = os.path.join(cookie_dir, random.choice(cookies_files))
