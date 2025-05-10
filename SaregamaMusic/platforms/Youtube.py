@@ -18,11 +18,6 @@ import aiohttp
 import config
 from config import API_URL, API_KEY
 
-import requests
-import glob
-import os
-import random
-
 
 def cookie_txt_file():
     cookie_dir = f"{os.getcwd()}/cookies"
